@@ -3,9 +3,9 @@ class Api::V1::ForecastController < ApplicationController
     # Use mapquest api to get lat long
     location = MapquestFacade.get_coord(params[:location])
 
+    weather = OpenweatherFacade.create_forcast(location)
+
     binding.pry
     render json: 'HI'
-
-    #  coord[:results][0][:locations][0][:latLng]
   end
 end

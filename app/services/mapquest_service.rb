@@ -1,6 +1,9 @@
 class MapquestService
   def self.get_coord(location)
-    response = connection.get("/geocoding/v1/address?key=#{ENV['MAPQUEST_KEY']}&location=#{location}")
+    response = connection.get('/geocoding/v1/address') do |req|
+      req.params['key'] = ENV['MAPQUEST_KEY']
+      req.params['location'] = location
+    end
 
     parsed_json = JSON.parse(response.body, symbolize_names: true)
   end
