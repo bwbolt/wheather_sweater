@@ -1,5 +1,5 @@
 class OpenweatherService
-  def self.get_forcast(location)
+  def self.get_forecast(location)
     response = connection.get('/data/2.5/onecall') do |req|
       req.params['lat'] = location.lat
       req.params['lon'] = location.lng

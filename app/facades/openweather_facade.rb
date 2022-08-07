@@ -1,7 +1,7 @@
 class OpenweatherFacade
-  def self.create_forcast(location)
-    parsed_json = OpenweatherService.get_forcast(location)
+  def self.create_forecast(location)
+    parsed_json = OpenweatherService.get_forecast(location)
 
-    Forcast.create_forcast(parsed_json)
+    Forecast.create_forecast(parsed_json)
   end
 end
