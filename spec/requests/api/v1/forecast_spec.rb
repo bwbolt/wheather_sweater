@@ -62,7 +62,7 @@ RSpec.describe '/forcast', :vcr do
           expect(hour).to be_a Hash
           expect(hour.keys).to contain_exactly(:time, :temperature, :conditions, :icon)
           expect(hour[:time]).to be_a String
-          expect(hour[:temperature]).to be_a Float
+          expect(hour[:temperature]).to_not be_a String
           expect(hour[:conditions]).to be_a String
           expect(hour[:icon]).to be_a String
         end

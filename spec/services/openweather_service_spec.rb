@@ -8,12 +8,5 @@ RSpec.describe 'OpenweatherService', :vcr do
 
       expect(parsed_json).to be_a Hash
     end
-
-    it '#get_forecast_at_arrival' do
-      location = MapquestFacade.get_coord('denver,co')
-      parsed_json = OpenweatherService.get_forecast_at_arrival(location)
-
-      expect(parsed_json).to be_a Hash
-    end
   end
 end

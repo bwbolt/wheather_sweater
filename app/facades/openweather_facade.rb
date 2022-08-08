@@ -6,7 +6,7 @@ class OpenweatherFacade
   end
 
   def self.create_forecast_at_arrival(location, hours_to_destination)
-    parsed_json = OpenweatherService.get_forecast_at_arrival(location)
+    parsed_json = OpenweatherService.get_forecast(location)
 
     ForecastAtArrival.new(parsed_json, hours_to_destination)
   end
