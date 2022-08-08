@@ -12,8 +12,12 @@ class OpenweatherFacade
   end
 
   def self.create_weather_at_eta(destination, travel_time)
-    location = MapquestFacade.get_coord(destination)
-    hours_to_destination = travel_time.split(' ').first.to_i
-    OpenweatherFacade.create_forecast_at_arrival(location, hours_to_destination)
+    if travel_time == 'impossible route'
+      nil
+    else
+      location = MapquestFacade.get_coord(destination)
+      hours_to_destination = travel_time.split(' ').first.to_i
+      OpenweatherFacade.create_forecast_at_arrival(location, hours_to_destination)
+    end
   end
 end

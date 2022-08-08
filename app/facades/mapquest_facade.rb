@@ -7,9 +7,12 @@ class MapquestFacade
 
   def self.get_travel_time(origin, destination)
     parsed_json = MapquestService.get_travel_time(origin, destination)
-
     minutes = parsed_json[:route][:realTime]
 
-    Time.at(minutes).utc.strftime('%H hours %M minutes')
+    if minutes.nil?
+      'impossible route'
+    else
+      Time.at(minutes).utc.strftime('%H hours %M minutes')
+    end
   end
 end
