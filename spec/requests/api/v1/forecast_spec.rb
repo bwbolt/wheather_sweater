@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'forcast', :vcr do
+RSpec.describe '/forcast', :vcr do
   describe 'happy path' do
     describe '#index' do
       it 'returns the forcast when given a valid location' do
