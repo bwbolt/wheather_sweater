@@ -6,7 +6,7 @@ class Api::V1::ForecastController < ApplicationController
 
       render json: ForecastSerializer.new(forecast)
     else
-      render status: 404
+      render json: { error: 'Location Required' }, status: :bad_request
     end
   end
 end
