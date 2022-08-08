@@ -3,6 +3,10 @@ class Resturant
 
   def initialize(data)
     @name = data[:name]
-    @address = data[:location][:address1]
+    @address = format_address(data)
+  end
+
+  def format_address(data)
+    "#{data[:location][:address1]}, #{data[:location][:city]}, #{data[:location][:state]}, #{data[:location][:zip_code]} "
   end
 end
