@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?location=cow&term=chinese
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.4.0
+      Authorization:
+      - Bearer MY_1jwOR08zkCfyLP-EveX5DyIgspVQjh8xvK3nRba4DBoqjUZ_qNbLuyzIoRVlyXuP8I0XJUBauEfo1H2qI0rMgaUPCGzC6Zqr0VvG6xElSQG3JxirJabKFWCbxYnYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '123'
+      Content-Type:
+      - application/json
+      Server:
+      - envoy
+      X-Zipkin-Id:
+      - 5a3ceb21294e2049
+      X-Routing-Service:
+      - routing-main--useast1-5db947469f-lz95h; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Cloudmap:
+      - routing_useast1
+      X-Mode:
+      - ro
+      X-Proxied:
+      - 10-65-91-109-useast1aprod
+      X-Extlb:
+      - 10-65-91-109-useast1aprod
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 08 Aug 2022 17:10:47 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-iad-kiad7000103-IAD
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"error": {"code": "LOCATION_NOT_FOUND", "description": "Could not
+        execute search, try specifying a more exact location."}}'
+  recorded_at: Mon, 08 Aug 2022 17:10:47 GMT
+recorded_with: VCR 6.1.0

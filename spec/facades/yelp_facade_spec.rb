@@ -10,4 +10,11 @@ RSpec.describe 'YelpFacade', :vcr do
       expect(resturant.address).to be_a String
     end
   end
+  describe 'sad path' do
+    it 'makes services calls and returns error if one exists' do
+      resturant = YelpFacade.create_resturant('chinese', 'cow')
+
+      expect(resturant).to eq('Could not execute search, try specifying a more exact location.')
+    end
+  end
 end
