@@ -1,4 +1,6 @@
 class ForecastAtArrival
+  attr_reader :conditions, :temperature
+
   def initialize(data, hours_to_destination)
     @temperature = set_temp(data, hours_to_destination)
     @conditions = set_conditions(data, hours_to_destination)
