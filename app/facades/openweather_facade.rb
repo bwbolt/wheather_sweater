@@ -16,7 +16,7 @@ class OpenweatherFacade
       nil
     else
       location = MapquestFacade.get_coord(destination)
-      hours_to_destination = travel_time.split(' ').first.to_i
+      hours_to_destination = travel_time.split(':').first.to_i
       OpenweatherFacade.create_forecast_at_arrival(location, hours_to_destination)
     end
   end
