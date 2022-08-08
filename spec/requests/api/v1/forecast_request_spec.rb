@@ -69,4 +69,13 @@ RSpec.describe 'forcast', :vcr do
       end
     end
   end
+  describe 'sad path' do
+    describe '#index' do
+      it 'renders 404 if no location is provided' do
+        get '/api/v1/forecast'
+
+        expect(response).to_not be_successful
+      end
+    end
+  end
 end
