@@ -5,7 +5,7 @@ class Api::V1::RoadTripController < ApplicationController
 
       road_trip = RoadTrip.new(params[:origin], params[:destination])
 
-      render json: 'hi'
+      render json: RoadTripSerializer.new(road_trip)
     end
   end
 end
