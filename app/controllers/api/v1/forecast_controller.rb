@@ -1,9 +1,12 @@
 class Api::V1::ForecastController < ApplicationController
   def index
-    # Use mapquest api to get lat long
-    location = MapquestFacade.get_coord(params[:location])
-    forecast = OpenweatherFacade.create_forecast(location)
+    if params[:location]
+      location = MapquestFacade.get_coord(params[:location])
+      forecast = OpenweatherFacade.create_forecast(location)
 
-    render json: ForecastSerializer.new(forecast)
+      render json: ForecastSerializer.new(forecast)
+    else
+      render status: 404
+    end
   end
 end
