@@ -4,6 +4,8 @@ class Api::V1::RoadTripController < ApplicationController
     if user.present?
       road_trip = RoadTrip.new(params[:origin], params[:destination])
       render json: RoadTripSerializer.new(road_trip)
+    else
+      render json: { error: 'Api Key Incorrect or Missing' }, status: :unauthorized
     end
   end
 end
