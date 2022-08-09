@@ -1,24 +1,8 @@
-# README
+# Weather Sweater
+---
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Utilizes:
+  - Consumption of multiple outside apis
+  - Works as the backend for a weather/travel site
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
